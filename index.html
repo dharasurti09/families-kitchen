@@ -1,0 +1,190 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Families Kitchen</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffe4e6; /* light pink */
+      color: #333;
+    }
+
+    header {
+      background-color: #ffb6c1;
+      padding: 20px;
+      text-align: center;
+      font-size: 2em;
+      font-weight: bold;
+    }
+
+    nav {
+      text-align: center;
+      margin: 20px;
+    }
+
+    nav button {
+      background-color: white;
+      border: 2px solid #ff69b4;
+      color: #ff69b4;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    nav button:hover {
+      background-color: #ff69b4;
+      color: white;
+    }
+
+    section {
+      padding: 40px;
+      min-height: 80vh;
+    }
+
+    .recipe {
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      margin: 20px 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .recipe:hover {
+      transform: scale(1.01);
+      background-color: #fff0f3;
+    }
+
+    .recipe h3 {
+      margin-top: 0;
+    }
+
+    .details {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .ingredients, .steps {
+      margin-bottom: 10px;
+    }
+
+    .ingredients ul, .steps ol {
+      margin: 0;
+      padding-left: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Families Kitchen</header>
+
+  <nav>
+    <button onclick="document.getElementById('breakfast').scrollIntoView({ behavior: 'smooth' });">Breakfast</button>
+    <button onclick="document.getElementById('lunch').scrollIntoView({ behavior: 'smooth' });">Lunch</button>
+    <button onclick="document.getElementById('dinner').scrollIntoView({ behavior: 'smooth' });">Dinner</button>
+  </nav>
+
+ 
+  <section id="breakfast">
+  <h2>Breakfast Recipes</h2>
+  <div class="recipe" onclick="toggleDetails(this)">
+    <img src="https://images.unsplash.com/photo-1584270354949-3e75c1430e56?auto=format&fit=crop&w=800&q=80" 
+         alt="Pancakes" style="width: 100%; border-radius: 10px; margin-bottom: 10px;">
+    <h3>Pancakes</h3>
+    <div class="details">
+      <div class="ingredients">
+        <strong>Ingredients:</strong>
+        <ul>
+          <li>1 cup flour</li>
+          <li>1 egg</li>
+          <li>1 cup milk</li>
+          <li>1 tbsp sugar</li>
+          <li>1 tsp baking powder</li>
+          <li>Pinch of salt</li>
+        </ul>
+      </div>
+      <div class="steps">
+        <strong>Steps:</strong>
+        <ol>
+          <li>Mix dry ingredients in a bowl.</li>
+          <li>Add egg and milk, stir until smooth.</li>
+          <li>Heat a non-stick pan and pour batter.</li>
+          <li>Cook until bubbles form, flip, and cook until golden.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <section id="lunch">
+    <h2>Lunch Recipes</h2>
+    <div class="recipe" onclick="toggleDetails(this)">
+      <h3>Grilled Cheese Sandwich</h3>
+      <div class="details">
+        <div class="ingredients">
+          <strong>Ingredients:</strong>
+          <ul>
+            <li>2 slices of bread</li>
+            <li>2 slices of cheese</li>
+            <li>Butter</li>
+          </ul>
+        </div>
+        <div class="steps">
+          <strong>Steps:</strong>
+          <ol>
+            <li>Butter the outside of both bread slices.</li>
+            <li>Place cheese between the unbuttered sides.</li>
+            <li>Grill in a pan until golden and melted.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="dinner">
+    <h2>Dinner Recipes</h2>
+    <div class="recipe" onclick="toggleDetails(this)">
+      <h3>Spaghetti Bolognese</h3>
+      <div class="details">
+        <div class="ingredients">
+          <strong>Ingredients:</strong>
+          <ul>
+            <li>Spaghetti</li>
+            <li>Minced meat</li>
+            <li>Tomato sauce</li>
+            <li>Onion, garlic</li>
+            <li>Salt, pepper, herbs</li>
+          </ul>
+        </div>
+        <div class="steps">
+          <strong>Steps:</strong>
+          <ol>
+            <li>Boil spaghetti until al dente.</li>
+            <li>Cook onion and garlic in a pan.</li>
+            <li>Add meat, cook until brown.</li>
+            <li>Pour in tomato sauce and simmer.</li>
+            <li>Serve sauce over spaghetti.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function toggleDetails(recipeDiv) {
+      const details = recipeDiv.querySelector('.details');
+      const isVisible = details.style.display === 'block';
+      details.style.display = isVisible ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>
